@@ -1,5 +1,5 @@
 // Data inicial: 14 de setembro de 2024, 14:21
-const startDate = new Date('2024-09-14T14:21:00');
+const startDate = new Date('2024-09-13T14:21:00');
 
 // Configuração do player de música
 const audio = new Audio('background.mp3'); // Certifique-se de que o arquivo está na pasta correta
