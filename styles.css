@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
 body {
@@ -309,123 +311,93 @@ h1 {
     }
 }
 
-@media (max-width: 480px) {
-    .music-player {
-        width: 95%;
-        margin: 0.5rem auto;
-        background-color: rgba(24, 24, 24, 0.98);
-    }
-    
-    .player-info {
-        gap: 1rem;
-    }
-    
-    .album-cover {
-        width: 55px;
-        height: 55px;
-        border-radius: 8px;
-    }
-    
-    .song-title {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 0.2rem;
-    }
-    
-    .artist-name {
-        font-size: 0.9rem;
-    }
-    
-    .device-info {
-        font-size: 0.8rem;
-    }
-    
-    .player-controls {
-        gap: 2rem;
-        padding: 0.5rem 0;
-    }
-    
-    .control-btn {
-        padding: 0.8rem;
-        font-size: 1.4rem;
-    }
-    
-    #play-pause {
-        font-size: 1.6rem;
-    }
-    
-    .volume-control {
-        padding: 0.5rem 1rem;
-    }
-    
-    #volume {
-        height: 4px;
-    }
-    
-    #volume::-webkit-slider-thumb {
-        width: 16px;
-        height: 16px;
-    }
-    
-    .volume-control i {
-        font-size: 1rem;
-    }
-    
-    .time-text {
-        font-size: 1.1rem;
-        padding: 0.5rem;
-        margin-top: 1rem;
-    }
-    
-    .custom-text {
-        font-size: 0.95rem;
-        padding: 0.5rem;
-        margin-top: 0.8rem;
-    }
-    
-    .center-image {
-        max-height: 70vh;
-        width: 100%;
-        object-fit: contain;
-    }
-    
-    .nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-        background-color: rgba(255, 255, 255, 0.9);
-        margin: 0 0.5rem;
-    }
+/* Estilos específicos para mobile */
+.mobile-device .music-player {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(24, 24, 24, 0.98);
 }
 
-@media (max-width: 360px) {
-    .music-player {
-        width: 98%;
+.mobile-device .container {
+    padding: 1rem;
+    padding-bottom: calc(130px + 1rem); /* Espaço para o player fixo */
+}
+
+.mobile-device .player-info {
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.mobile-device .album-cover {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.mobile-device .player-controls {
+    padding: 0.5rem 0;
+}
+
+.mobile-device .control-btn {
+    padding: 0.8rem;
+    font-size: 1.4rem;
+}
+
+.mobile-device .volume-control {
+    display: none; /* Ocultar controle de volume em mobile */
+}
+
+.mobile-device .time-text {
+    font-size: 1.1rem;
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+}
+
+.mobile-device .custom-text {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.mobile-device .center-image {
+    max-height: 70vh;
+    width: 100%;
+    object-fit: contain;
+}
+
+.mobile-device .nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 0 0.5rem;
+}
+
+.mobile-device .navigation-buttons {
+    padding: 0 1rem;
+}
+
+@media (max-width: 480px) {
+    .mobile-device .music-player {
+        padding: 0.8rem;
+    }
+    
+    .mobile-device .player-controls {
+        gap: 2rem;
+    }
+    
+    .mobile-device .control-btn {
         padding: 0.6rem;
     }
     
-    .album-cover {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .song-title {
-        font-size: 0.95rem;
-    }
-    
-    .artist-name {
-        font-size: 0.85rem;
-    }
-    
-    .player-controls {
-        gap: 1.5rem;
-    }
-    
-    .control-btn {
-        font-size: 1.3rem;
-    }
-    
-    #play-pause {
-        font-size: 1.5rem;
+    .mobile-device .custom-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
 } 

@@ -129,4 +129,28 @@ setInterval(updateTimeTogether, 1000);
 
 // Inicializar
 updateImage();
-updateTimeTogether(); 
+updateTimeTogether();
+
+// Detectar tipo de dispositivo
+function isMobileDevice() {
+    return (window.innerWidth <= 768) || 
+           (navigator.maxTouchPoints > 0) || 
+           (navigator.msMaxTouchPoints > 0) ||
+           (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+}
+
+// Ajustar interface baseado no dispositivo
+function adjustInterfaceForDevice() {
+    const isMobile = isMobileDevice();
+    document.body.classList.toggle('mobile-device', isMobile);
+    
+    // Ajustar volume inicial em dispositivos móveis
+    if (isMobile) {
+        audio.volume = 0.7; // 70% do volume em mobile
+        volumeSlider.value = 70;
+    }
+}
+
+// Chamar ajuste quando a página carregar e quando redimensionar
+window.addEventListener('load', adjustInterfaceForDevice);
+window.addEventListener('resize', adjustInterfaceForDevice); 
