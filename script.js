@@ -7,12 +7,12 @@ const playPauseBtn = document.getElementById('play-pause');
 const volumeSlider = document.getElementById('volume');
 const playIcon = playPauseBtn.querySelector('i');
 
-let isPlaying = true;
+let isPlaying = false;
 
 // Função para iniciar a música
 function playMusic() {
     audio.play().then(() => {
-        isPlaying = true;
+        isPlaying = false;
         playIcon.classList.replace('fa-play', 'fa-pause');
     }).catch(error => {
         console.log("Erro ao reproduzir áudio:", error);
