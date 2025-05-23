@@ -7,7 +7,7 @@ const playPauseBtn = document.getElementById('play-pause');
 const volumeSlider = document.getElementById('volume');
 const playIcon = playPauseBtn.querySelector('i');
 
-let isPlaying = false;
+let isPlaying = true;
 
 // Função para iniciar a música
 function playMusic() {
